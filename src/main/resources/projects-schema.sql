@@ -5,13 +5,13 @@ DROP TABLE IF EXISTS project;
 DROP TABLE IF EXISTS category;
 
 CREATE TABLE category (
-	category_id INT NOT NULL,
+	category_id INT AUTO_INCREMENT NOT NULL,
 	category_name VARCHAR(128) NOT NULL,
 	PRIMARY KEY (category_id)
 );
 
 CREATE TABLE project (
-	project_id INT NOT NULL,
+	project_id INT AUTO_INCREMENT NOT NULL,
 	project_name VARCHAR(128) NOT NULL,
 	estimated_hours DECIMAL(7,2),
 	actual_hours DECIMAL(7,2),
@@ -28,7 +28,7 @@ CREATE TABLE project_category (
 );
 
 CREATE TABLE step (
-	step_id INT NOT NULL,
+	step_id INT AUTO_INCREMENT NOT NULL,
 	project_id INT NOT NULL,
 	step_text TEXT NOT NULL,
 	step_order INT NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE step (
 );
 
 CREATE TABLE material (
-	material_id INT NOT NULL,
+	material_id INT AUTO_INCREMENT NOT NULL,
 	project_id INT NOT NULL,
 	material_name VARCHAR(128) NOT NULL,
 	num_required INT,
